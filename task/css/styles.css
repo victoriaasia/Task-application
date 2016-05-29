@@ -17,8 +17,9 @@ body {
   padding: 3px;
   color: #fff;
   text-align: center;
-  /*width: 650px;*/
-  background: #d9534f;
+  font-weight: bold;
+  width: 430px;
+  background-color: rgba(0,0,0,0.3);
 }
 
 .mlogin-form, .mregister-form {
@@ -36,6 +37,7 @@ body {
   background-color: rgba(0,0,0,0.3);
   padding: 10px;
   text-align: justify;
+  margin-bottom: 10px;
 }
 
 #welcome_index {
@@ -43,6 +45,9 @@ body {
   background-color: rgba(0,0,0,0.3);
   padding: 10px;
   text-align: justify;
+  margin: 0 auto;
+  position: relative;
+  top:30%;
 }
 
 #welcome h2 {

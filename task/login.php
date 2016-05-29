@@ -19,7 +19,7 @@
       <input type="text" name="username" id="username" class="input" value="" size="20" /></label>
   </p>
   <p>
-      <label for="user_pass">Пароль<br />
+      <label for="password">Пароль<br />
       <input type="password" name="password" id="password" class="input" value="" size="20" /></label>
   </p>
 
@@ -67,7 +67,7 @@
 			header("Location: index.php");
 		}
 		else {
-			echo "<p class=\"error\"> Войдите или зарегистрируйтесь </p>";
+			echo "<p class=\"error\"> <span>Войдите или зарегистрируйтесь </span></p>";
 		}
 	}
 ?>
