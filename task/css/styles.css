@@ -1,0 +1,212 @@
+body {
+  font-family: 'Roboto Mono',normal;
+  font-size: 16px;
+  padding: 1em;
+  margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image:url(../img/back-img11.jpg);
+  background-position: center;
+  /*background: #efefef;*/
+}
+
+.error {
+  margin: 30px auto 30px;
+  /*border: 1px solid #777;*/
+  padding: 3px;
+  color: #fff;
+  text-align: center;
+  /*width: 650px;*/
+  background: #d9534f;
+}
+
+.mlogin-form, .mregister-form {
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+}
+
+.mlogin, .mregister {
+  width: 430px;
+  margin: 0 auto;
+}
+
+#welcome {
+  width: 250px;
+  background-color: rgba(0,0,0,0.3);
+  padding: 10px;
+  text-align: justify;
+}
+
+#welcome_index {
+  width: 295px;
+  background-color: rgba(0,0,0,0.3);
+  padding: 10px;
+  text-align: justify;
+}
+
+#welcome h2 {
+  background: #efefef;
+  text-align: center;
+  height: 35px;
+  line-height: 33px;
+  font-size: 22px;
+}
+
+input {
+  font-family: 'Roboto Mono',normal;
+  font-size: 16px;
+  outline: none !important;
+  width: 320px;
+}
+
+#login {
+  width: 400px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.reg {
+  margin-left: 10px;
+}
+
+a {
+  color: #d2322d;
+  transition: color .5s ease;
+}
+
+a:hover, a:focus {
+  color: #d2322d;
+  transition: color .5s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+h1,button {
+  font-size: 34px;
+  font-weight: 500;
+}
+
+/*button {
+  margin-left: 5px;
+}*/
+
+button a {
+  color: white;
+}
+
+button:hover a {
+  color: white;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+}
+
+/*input[type="text"] {
+  background-color: rgba(216, 84, 79, 0.21);
+}*/
+
+
+.btn-sm {
+  line-height: 1.9;
+}
+
+.b-main {
+  float: none;
+  margin: 0 auto;
+}
+
+div.task label.checkbox {
+  border: 0 solid #000;
+  border-left-width: 3px;
+  padding: 9px 9px 9px 29px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-top: 10px;
+  position: relative;
+  font-weight: 400;
+  width: 100%;
+	height: 70px;
+	overflow-y: auto;
+  display: flex;
+  justify-content: space-between;;
+}
+
+div.task label.checkbox:nth-child(odd) {
+	float: left;
+}
+
+div.task label.checkbox:nth-child(even) {
+	float: right;
+}
+
+.widget-header {
+  background: #000;
+  border: 1px solid #000;
+  box-sizing: content-box;
+  position: relative;
+  min-height: 38px;
+  padding: 0 12px;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+}
+
+.filter {
+  margin-top: 6px;
+}
+
+.widget-body {
+  border-color: #000;
+  margin-top: -10px;
+  padding: 20px 10px;
+  position: relative;
+  height: 100%;
+}
+
+.widget-box {
+/*border: 1px solid #CCC;*/
+  min-width: 150px;
+  margin: 0 auto;
+  border-top: 0;
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.header-elements-margin {
+  margin: 5px;
+}
+
+.add-task {
+  margin-top: 10px;
+}
+
+.nav-button-margin {
+  margin: 10px 20px 0 0;
+}
+
+.navbar {
+  border-radius: 0;
+  background: #000;
+  color: #fff;
+}
+
+.navbar .navbar-brand {
+  color: #FFF;
+  font-size: 24px;
+  text-shadow: none;
+}
+
+@media screen and (max-width:1007px) {
+  .widget-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

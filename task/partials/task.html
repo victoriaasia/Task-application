@@ -1,0 +1,41 @@
+<div class="widget-box col-md-12" id="recent-box" ng-controller="tasksController">
+
+<div class="widget-header">
+
+<div class="widget-header__title">
+<h4 class="bigger lighter">
+	<i class="glyphicon glyphicon-list-alt"></i>&nbsp;
+	Список дел
+</h4>
+</div>
+<div class="widget-header__button">
+<button ng-click="addNewClicked=!addNewClicked;" class="btn btn-sm btn-danger header-elements-margin"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить запись</button>
+</div>
+<div class="widget-header__filter">
+<input type="text" ng-model="filterTask" class="form-control search header-elements-margin" placeholder="Фильтровать...">
+</div>
+
+</div>
+<div class="widget-body ">
+<form ng-init="addNewClicked=false; " ng-if="addNewClicked" id="newTaskForm" class="add-task">
+<div class="form-actions">
+<div class="input-group">
+<input type="text" class="form-control" name="comment" ng-model="taskInput" placeholder="...." ng-focus="addNewClicked">
+<div class="input-group-btn">
+<button class="btn btn-default" type="submit" ng-click="addTask(taskInput)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить</button>
+</div>
+</div>
+</div>
+</form>
+<div class="task">
+	<label class="checkbox" ng-repeat="task in tasks | filter : filterTask">
+    <input type="checkbox"
+	value="{{task.STATUS}}"
+	ng-checked="task.STATUS==1"
+	ng-click="toggleStatus(task.ID,task.STATUS, task.TASK)"/>
+	<span ng-class="{strike:task.STATUS==1}">{{task.TASK}}</span>
+	<a ng-click="deleteTask(task.ID)" class="pull-right"><i class="glyphicon glyphicon-trash"></i></a>
+    </label>
+</div>
+</div>
+</div>
