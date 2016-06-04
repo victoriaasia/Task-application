@@ -14,14 +14,14 @@
 
 
 <form name="loginform" id="loginform" action="" method="post">
-  <p>
-      <label for="username">Логин<br />
-      <input type="text" name="username" id="username" class="input" value="" size="20" /></label>
-  </p>
-  <p>
-      <label for="password">Пароль<br />
-      <input type="password" name="password" id="password" class="input" value="" size="20" /></label>
-  </p>
+  <div>
+      <label for="username">Логин</label>
+      <input type="text" name="username" id="username" class="input" value="" size="20" />
+  </div>
+  <div>
+      <label for="password">Пароль</label>
+      <input type="password" name="password" id="password" class="input" value="" size="20" />
+  </div>
 
 
   <p class="submit">
@@ -67,7 +67,7 @@
 			header("Location: index.php");
 		}
 		else {
-			echo "<p class=\"error\"> <span>Войдите или зарегистрируйтесь </span></p>";
+			echo "<p class=\"errorB\"> <span>Войдите или зарегистрируйтесь </span></p>";
 		}
 	}
 ?>

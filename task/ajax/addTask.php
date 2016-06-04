@@ -7,7 +7,7 @@ $user = getUser(true);
 if(isset($_GET['task'])){
 $task = $_GET['task'];
 $status = "0";
-$created = time();
+$created = date("Y-m-d H:i:s");
 
 
 $query="INSERT INTO tasks(task,status,created_at,id_user)  VALUES ('$task', '$status', '$created', '{$user['id']}')";

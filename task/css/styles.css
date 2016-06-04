@@ -11,7 +11,15 @@ body {
   /*background: #efefef;*/
 }
 
-.error {
+label {
+  display: block;
+}
+
+.submit {
+  margin: 20px 0;
+}
+
+.errorB {
   margin: 30px auto 30px;
   /*border: 1px solid #777;*/
   padding: 3px;
@@ -20,6 +28,10 @@ body {
   font-weight: bold;
   width: 430px;
   background-color: rgba(0,0,0,0.3);
+}
+
+label.error {
+  color: #d2322d;
 }
 
 .mlogin-form, .mregister-form {
@@ -33,7 +45,7 @@ body {
 }
 
 #welcome {
-  width: 250px;
+  /*width: 250px;*/
   background-color: rgba(0,0,0,0.3);
   padding: 10px;
   text-align: justify;
@@ -53,9 +65,14 @@ body {
 #welcome h2 {
   background: #efefef;
   text-align: center;
-  height: 35px;
+  height: auto;
+  padding: 0 5px;
   line-height: 33px;
   font-size: 22px;
+}
+
+#registerform div, #loginform div {
+  margin: 5px 0;
 }
 
 input {
@@ -111,11 +128,6 @@ input[type="checkbox"] {
   width: 20px;
 }
 
-/*input[type="text"] {
-  background-color: rgba(216, 84, 79, 0.21);
-}*/
-
-
 .btn-sm {
   line-height: 1.9;
 }
@@ -146,6 +158,20 @@ div.task label.checkbox:nth-child(odd) {
 
 div.task label.checkbox:nth-child(even) {
 	float: right;
+}
+
+.task-content__date {
+  color: #555;
+  font-size: 8px;
+}
+
+.task-content p:first-child {
+  font-size: 20px;
+}
+
+.task-content {
+  width: 100%;
+  text-align: center;
 }
 
 .widget-header {
@@ -207,11 +233,4 @@ div.task label.checkbox:nth-child(even) {
   color: #FFF;
   font-size: 24px;
   text-shadow: none;
-}
-
-@media screen and (max-width:1007px) {
-  .widget-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }

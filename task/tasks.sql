@@ -15,7 +15,7 @@ CREATE TABLE `tasks` (
   `id` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
   `task` varchar(200) NOT NULL,
   `status` int(11) NOT NULL,
-  `created_at` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL ON UPDATE current_timestamp,
   `id_user` TINYINT(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `FK1` (`id_user`),
@@ -23,10 +23,10 @@ CREATE TABLE `tasks` (
 );
 
 INSERT INTO `tasks` (`id`, `task`, `status`, `created_at`, `id_user`) VALUES
-(4, 'Привет', 0, 1390815970, 1),
-(3, 'здесь ты можешь', 0, 1390815993, 1),
-(2, 'записывать важные дела', 0, 1390817659, 1),
-(1, 'которые предстоит совершить', 0, 1390818389, 1);
+(4, 'Привет', 0, NOW(), 1),
+(3, 'здесь ты можешь', 0, NOW(), 1),
+(2, 'записывать важные дела', 0, NOW(), 1),
+(1, 'которые предстоит совершить', 0, NOW(), 1);
 
 CREATE TABLE `connect` (
   `id_user` TINYINT(3) UNSIGNED,

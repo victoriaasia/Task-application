@@ -1,4 +1,4 @@
-<div class="widget-box col-md-12" id="recent-box" ng-controller="tasksController">
+<div class="widget-box col-xs-12" id="recent-box" ng-controller="tasksController">
 
 <div class="widget-header">
 
@@ -16,7 +16,7 @@
 </div>
 
 </div>
-<div class="widget-body ">
+<div class="widget-body">
 <form ng-init="addNewClicked=false; " ng-if="addNewClicked" id="newTaskForm" class="add-task">
 <div class="form-actions">
 <div class="input-group">
@@ -32,8 +32,11 @@
     <input type="checkbox"
 	value="{{task.STATUS}}"
 	ng-checked="task.STATUS==1"
-	ng-click="toggleStatus(task.ID,task.STATUS, task.TASK)"/>
-	<span ng-class="{strike:task.STATUS==1}">{{task.TASK}}</span>
+	ng-click="toggleStatus(task.ID, task.STATUS, task.TASK)"/>
+	<div class="task-content">
+	<p ng-class="{strike:task.STATUS==1}">{{task.TASK}}</p>
+	<p class="task-content__date">добавлено: {{task.CREATED_AT}}</p>
+  </div>
 	<a ng-click="deleteTask(task.ID)" class="pull-right"><i class="glyphicon glyphicon-trash"></i></a>
     </label>
 </div>

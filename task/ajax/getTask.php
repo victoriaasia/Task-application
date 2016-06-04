@@ -7,7 +7,7 @@ $status = '%';
 if(isset($_GET['status'])){
 $status = $_GET['status'];
 }
-$query="select ID, TASK, STATUS from tasks where status like '$status' and `id_user` = {$user['id']} order by status,id desc";
+$query="select ID, TASK, STATUS, CREATED_AT from tasks where status like '$status' and `id_user` = {$user['id']} order by status,id desc";
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
 $arr = array();
@@ -17,6 +17,5 @@ if($result->num_rows > 0) {
 	}
 }
 
-# JSON-encode the response
 echo $json_response = json_encode($arr);
 ?>

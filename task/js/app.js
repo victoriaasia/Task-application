@@ -2,7 +2,7 @@
 var app = angular.module('myApp', []);
 
 app.controller('tasksController', function($scope, $http) {
-  getTask(); // Load all available tasks
+  getTask();
   function getTask() {
   $http.post("ajax/getTask.php").success(function(data) {
         $scope.tasks = data;
