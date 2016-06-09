@@ -1,33 +1,34 @@
-<?php
-// session_start();
-?>
-
 <?php require_once("includes/connection.php"); ?>
 <?php include("includes/header.php"); ?>
 
 
 <div class="mlogin">
 
-<div class="mlogin-form">
+<div class="mlogin-form col-xs-8 col-sm-10 col-md-12 col-lg-12">
 <div id="login">
 <h1>Вход</h1>
 
 
 <form name="loginform" id="loginform" action="" method="post">
-  <div>
+  <div class="styled-input wide">
+      <input type="text" name="username" id="username" class="input" value="" size="20" required />
       <label for="username">Логин</label>
-      <input type="text" name="username" id="username" class="input" value="" size="20" />
   </div>
-  <div>
+  <div class="styled-input wide">
+      <input type="password" name="password" id="password" class="input" value="" size="20" required />
       <label for="password">Пароль</label>
-      <input type="password" name="password" id="password" class="input" value="" size="20" />
   </div>
 
 
   <p class="submit">
- <button class="btn btn-sm btn-danger" type="submit" name="login" >Войти</button>
+ <button class="btn btn-md btn-danger" type="submit" name="login" >Войти</button>
 </p>
-  <p class="regtext">Еще нет аккаунта?<button class="btn btn-sm btn-danger reg"><a href="register.php">Зарегистрироваться</a></button></p>
+  <p class="regtext">
+    <span>Еще нет аккаунта?</span>
+    <button class="btn btn-md btn-danger reg">
+      <a href="register.php">Зарегистрироваться</a>
+    </button>
+  </p>
 
 </form>
 

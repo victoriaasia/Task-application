@@ -1,14 +1,26 @@
+
+
+html {
+  overflow-y: scroll;
+}
+
 body {
-  font-family: 'Roboto Mono',normal;
+  font-family: 'Jura', sans-serif;
   font-size: 16px;
-  padding: 1em;
+  /*padding: 1em;*/
   margin: 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-image:url(../img/back-img11.jpg);
   background-position: center;
+  padding-right: 0 !important;
+  /*overflow: hidden;*/
   /*background: #efefef;*/
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Jura', sans-serif !important;
 }
 
 label {
@@ -44,6 +56,10 @@ label.error {
   margin: 0 auto;
 }
 
+.mlogin, .mregister {
+  margin-top: 50px;
+}
+
 #welcome {
   /*width: 250px;*/
   background-color: rgba(0,0,0,0.3);
@@ -53,13 +69,14 @@ label.error {
 }
 
 #welcome_index {
-  width: 295px;
+  width: 100%;
   background-color: rgba(0,0,0,0.3);
-  padding: 10px;
-  text-align: justify;
-  margin: 0 auto;
-  position: relative;
-  top:30%;
+  padding: 20px;
+  margin-top: 23px;
+  display: flex;
+  justify-content: space-around;
+  /*text-align: center;
+  margin: 0 auto;*/
 }
 
 #welcome h2 {
@@ -71,21 +88,110 @@ label.error {
   font-size: 22px;
 }
 
-#registerform div, #loginform div {
+/*#registerform div, #loginform div {
   margin: 5px 0;
+}*/
+
+.regtext {
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-input {
-  font-family: 'Roboto Mono',normal;
+
+/* Place Holder CSS */
+::-webkit-input-placeholder {
+  color: #000;
+  opacity: 0.8;
+  -webkit-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:-moz-placeholder {
+  color: #000;
+  opacity: 0.8;
+  -moz-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+::-moz-placeholder {
+  color: #000;
+  opacity: 0.8;
+  -moz-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:-ms-input-placeholder {
+  color: #000;
+  opacity: 0.5;
+  -ms-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+
+/* Place Holder CSS for Focus */
+:hover::-webkit-input-placeholder {
+  opacity: 0.75;
+  -webkit-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:hover:-moz-placeholder {
+  opacity: 0.75;
+  -moz-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:hover::-moz-placeholder {
+  opacity: 0.75;
+  -moz-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:hover:-ms-input-placeholder {
+  opacity: 0.75;
+  -ms-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+
+/* Place Holder CSS for Focus */
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus:-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus:-ms-input-placeholder {
+  opacity: 0;
+  -ms-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+
+/* Custom Input Style */
+
+
+/*input {
+  font-family: 'Jura', sans-serif !important;
   font-size: 16px;
   outline: none !important;
   width: 320px;
+  border: 0;
+  padding-left: 5px;
+}*/
+
+.form-control {
+  border: 0;
+  border-radius: 0;
 }
 
 #login {
-  width: 400px;
+  /*width: 400px;*/
   margin: 0 auto;
-  padding: 30px 0;
+  /*padding: 30px 0;*/
 }
 
 .reg {
@@ -107,22 +213,28 @@ a:hover {
   cursor: pointer;
 }
 
-h1,button {
+#login h1 {
   font-size: 34px;
   font-weight: 500;
+  border: 0 solid #000;
+  border-left-width: 3px;
+  padding: 10px 10px 10px 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
 }
 
-/*button {
-  margin-left: 5px;
-}*/
+button:active, button:focus {
+  outline: none;
+}
 
-button a {
+button::-moz-focus-inner {
+  border: 0;
+}
+
+button a, button:active a, button:hover a, button:focus a  {
   color: white;
 }
 
-button:hover a {
-  color: white;
-}
 
 input[type="checkbox"] {
   width: 20px;
@@ -137,6 +249,14 @@ input[type="checkbox"] {
   margin: 0 auto;
 }
 
+.b-flex {
+  display: flex;
+  /*flex-direction: row;
+  justify-content: space-between;*/
+  /*align-items: center;*/
+  margin-top: 50px;
+}
+
 div.task label.checkbox {
   border: 0 solid #000;
   border-left-width: 3px;
@@ -146,7 +266,7 @@ div.task label.checkbox {
   position: relative;
   font-weight: 400;
   width: 100%;
-	height: 70px;
+	max-height: 200px;
 	overflow-y: auto;
   display: flex;
   justify-content: space-between;;
@@ -162,16 +282,21 @@ div.task label.checkbox:nth-child(even) {
 
 .task-content__date {
   color: #555;
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .task-content p:first-child {
-  font-size: 20px;
+  font-size: 21px;
 }
 
 .task-content {
   width: 100%;
   text-align: center;
+  padding: 0 5px;
+}
+
+.task-content-in {
+  font-size: 18px;
 }
 
 .widget-header {
@@ -191,20 +316,26 @@ div.task label.checkbox:nth-child(even) {
 }
 
 .widget-body {
-  border-color: #000;
+  margin-top: 15px;
+  /*border-color: #000;
   margin-top: -10px;
   padding: 20px 10px;
   position: relative;
-  height: 100%;
+  height: 100%;*/
 }
 
 .widget-box {
-/*border: 1px solid #CCC;*/
   min-width: 150px;
   margin: 0 auto;
   border-top: 0;
   background-color: rgba(0,0,0,0.3);
-  position: absolute;
+  /*position: relative;*/
+}
+
+.widget-box-in {
+  background-color: rgba(0,0,0,0.3);
+  height: 540px;
+  margin: 0 auto;
 }
 
 .strike {
@@ -233,4 +364,138 @@ div.task label.checkbox:nth-child(even) {
   color: #FFF;
   font-size: 24px;
   text-shadow: none;
+}
+
+
+
+
+#loginform input:focus ~ label, #loginform input:valid ~ label,
+#registerform input:focus ~ label, #registerform input:valid ~ label
+ {
+    font-size: 0.55em;
+    color: #999;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.styled-input {
+    float: left;
+    width: 293px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:100%;
+    }
+}
+
+.styled-input label {
+    color: #999;
+    padding: 1.3rem 20px 1rem 20px;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+    font-weight: normal;
+}
+
+.styled-input.wide {
+    width: 100%;
+    max-width: 100%;
+    border: 0 solid #000;
+    border-left-width: 3px;
+}
+
+#loginform input, #registerform input {
+    padding: 20px;
+    border: 0;
+    width: 100%;
+    /*font-size: 1rem;*/
+    background-color: white;
+    color: #999;
+    /*border-radius: 4px;*/
+    opacity: 0.9;
+}
+
+button {
+  border-radius: 0 !important;
+}
+
+/*
+#newTaskForm {
+  display:none;
+}*/
+
+#Modal {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.modal_content {
+  width: 44%;
+  /*margin: 0 auto;*/
+  position: fixed;
+  left: 28%;
+  top: 30%;
+}
+
+.modal_content-text {
+  border: 0 solid rgba(0,0,0,0.3);
+  border-left-width: 1px;
+  padding: 9px 9px 9px 29px;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  font-weight: 400;
+  width: 100%;
+}
+
+.modal-backdrop.in {
+  opacity: .9;
+}
+
+button.add {
+  margin-left: 1px;
+  margin-top: 10px;
+}
+
+.modal_content-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.styled-checkbox {
+  height: 40px;
+}
+
+.styled-checkbox label {
+  color: white;
+}
+
+
+input[type="radio"] {
+  opacity: 0;
+}
+input[type="radio"] + label:before {
+  width: 1rem;
+  height: 1rem;
+  background: #bdc3c7;
+  display: inline-block;
+  content: "";
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: -0.12rem 0.3rem 0 0;
+}
+input[type="radio"]:hover + label:before {
+  background: #95a5a6;
+}
+input[type="radio"]:checked + label:before {
+  background: #d2322d;
 }

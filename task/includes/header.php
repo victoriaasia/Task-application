@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Jura:400,500,600,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 <style>
 body.noscroll{
   min-height:100%;

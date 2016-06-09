@@ -1,4 +1,4 @@
-<div class="widget-box col-xs-12" id="recent-box" ng-controller="tasksController">
+<div class="widget-box col-lg-6 col-md-6 col-sm-8 col-xs-12 " id="recent-box" ng-controller="tasksController">
 
 <div class="widget-header">
 
@@ -9,7 +9,7 @@
 </h4>
 </div>
 <div class="widget-header__button">
-<button ng-click="addNewClicked=!addNewClicked;" class="btn btn-sm btn-danger header-elements-margin"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить запись</button>
+<button ng-click="addNewClicked=true;" class="btn btn-md btn-danger header-elements-margin" data-toggle="modal" data-target="#Modal"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить запись</button>
 </div>
 <div class="widget-header__filter">
 <input type="text" ng-model="filterTask" class="form-control search header-elements-margin" placeholder="Фильтровать...">
@@ -17,16 +17,40 @@
 
 </div>
 <div class="widget-body">
-<form ng-init="addNewClicked=false; " ng-if="addNewClicked" id="newTaskForm" class="add-task">
-<div class="form-actions">
-<div class="input-group">
-<input type="text" class="form-control" name="comment" ng-model="taskInput" placeholder="...." ng-focus="addNewClicked">
-<div class="input-group-btn">
-<button class="btn btn-default" type="submit" ng-click="addTask(taskInput)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить</button>
-</div>
-</div>
-</div>
-</form>
+
+
+	<form ng-init="addNewClicked=false; " ng-if="addNewClicked" id="newTaskForm" class="add-task">
+	<div class="form-actions modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal_content">
+	<textarea class="modal_content-text" rows="5" name="comment" ng-model="taskInput" placeholder="Запись" ng-focus="addNewClicked"></textarea>
+
+	<div class="modal_content-btn">
+	<button class="btn btn-md btn-danger add" data-dismiss="modal" aria-hidden="true" type="submit" ng-click="addTask(taskInput)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить</button>
+
+	<div class="styled-checkbox">
+ 		 <input type="radio" name="radio" class="study" id="study"/>
+ 		 <label for="study"><span>учеба</span></label>
+  </div>
+
+	<div class="styled-checkbox">
+ 		 <input type="radio" name="radio" class="work" id="work"/>
+ 		 <label for="work"><span>работа</span></label>
+  </div>
+
+	<div class="styled-checkbox">
+		 <input type="radio" name="radio" class="aims" id="aims"/>
+		 <label for="aims"><span>цели</span></label>
+	</div>
+
+
+	</div>
+
+
+	</div>
+	</div>
+	</form>
+
+
 <div class="task">
 	<label class="checkbox" ng-repeat="task in tasks | filter : filterTask">
     <input type="checkbox"
@@ -41,4 +65,5 @@
     </label>
 </div>
 </div>
+
 </div>

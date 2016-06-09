@@ -2,39 +2,42 @@
 
 <div class="mregister">
 
-	<div class="mregister-form">
+	<div class="mregister-form col-xs-8 col-sm-10 col-md-12 col-lg-12">
 	<div id="login">
-	<h1>Зарегистрироваться</h1>
+	<h1>Регистрация</h1>
 <form name="registerform" id="registerform" action="register.php" method="post">
-	<div>
+	<div class="styled-input wide">
+		<input type="text" name="full_name" id="full_name" class="input" size="32" value="" required />
 		<label for="full_name">Имя</label>
-		<input type="text" name="full_name" id="full_name" class="input" size="32" value=""  />
 	</div>
 
 
-	<div>
+	<div class="styled-input wide">
+		<input type="email" name="email" id="email" class="input" value="" size="32" required/>
 		<label for="email">Email</label>
-		<input type="email" name="email" id="email" class="input" value="" size="32" />
 	</div>
 
-	<div>
+	<div class="styled-input wide">
+		<input type="text" name="username" id="username" class="input" value="" size="20" required/>
 		<label for="username">Логин</label>
-		<input type="text" name="username" id="username" class="input" value="" size="20" />
 	</div>
 
-	<div>
+	<div class="styled-input wide">
+		<input type="password" name="password" id="password" class="input" value="" size="32" required/>
 		<label for="password">Пароль</label>
-		<input type="password" name="password" id="password" class="input" value="" size="32" />
 	</div>
 
 
 		<p class="submit">
 
-    <button class="btn btn-sm btn-danger" type="submit" name="register" id="register" >Зарегистрироваться</button>
+    <button class="btn btn-md btn-danger" type="submit" name="register" id="register" >Зарегистрироваться</button>
 
 	</p>
 
-<p class="regtext">Уже зарегистрированы? <button class="btn btn-sm btn-danger"><a href="login.php" >Войти</a></button></p>
+<p class="regtext">
+	<span>Уже зарегистрированы? </span>
+	<button class="btn btn-md btn-danger"><a href="login.php" >Войти</a></button>
+</p>
 
 </form>
 
@@ -77,7 +80,7 @@ if(isset($_POST["register"])){
 
 				setcookie('s', $session);
 				setcookie('t', $token);
-				header("Location: index.php");
+				header("Location: login.php");
 			}
 
 			else {

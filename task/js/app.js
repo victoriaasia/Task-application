@@ -11,7 +11,7 @@ app.controller('tasksController', function($scope, $http) {
   $scope.addTask = function (task) {
     $http.post("ajax/addTask.php?task="+task).success(function(data){
         getTask();
-        $scope.taskInput = "";
+        // $scope.taskInput = "";
       });
   };
   $scope.deleteTask = function (task) {
