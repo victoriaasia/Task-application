@@ -37,6 +37,14 @@ CREATE TABLE `connect` (
   FOREIGN KEY (`id_user`) REFERENCES `users`(`id`) ON DELETE CASCADE
 );
 
+-- CREATE TABLE `type` (
+--   `id` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+--   `id_task` TINYINT(3) UNSIGNED NOT NULL,
+--   PRIMARY KEY (`id`),
+--   INDEX `FK1` (`id_task`),
+--   FOREIGN KEY (`id_task`) REFERENCES `tasks`(`id`) ON DELETE CASCADE
+-- );
+
 
 
 
