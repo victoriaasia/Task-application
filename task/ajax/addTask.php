@@ -8,10 +8,11 @@ if(isset($_GET['task'])){
 $task = $_GET['task'];
 $status = "0";
 $created = date("Y-m-d H:i:s");
-$type = $_GET['id_task'];
+// $type = $_GET['id_task'];
+$type = "3";
 
 
-$query="INSERT INTO tasks(task,status,created_at,id_user,id_task)  VALUES ('$task', '$status', '$created', '{$user['id']}'), '$type'";
+$query="INSERT INTO tasks(task,status,created_at,id_user, id_type)  VALUES ('$task', '$status', '$created', '{$user['id']}', '$type')";
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
 $result = $mysqli->affected_rows;

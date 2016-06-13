@@ -2,7 +2,7 @@
 <?php
 require("constants.php");
 
-$con = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die(mysql_error());
-	mysql_select_db("task") or die("Cannot select DB");
+$con = mysqli_connect(DB_SERVER,DB_USER, DB_PASS, DB_NAME) or die(mysqli_error());
+	// mysqli_select_db("task") or die("Cannot select DB");
 
 	?>
