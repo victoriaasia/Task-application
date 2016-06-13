@@ -59,8 +59,8 @@
 	ng-click="toggleStatus(task.ID, task.STATUS, task.TASK)"/>
 	<div class="task-content">
 	<p ng-class="{strike:task.STATUS==1}">{{task.TASK}}</p>
-	<p class="task-content__date">добавлено: {{task.CREATED_AT}}</p>
-	<p class="task-content__type">type: {{task.ID_TYPE}}</p>
+	<span class="task-content__date">добавлено: {{task.CREATED_AT}}</span>
+	<span class="task-content__type">type: {{task.ID_TYPE}}</span>
   </div>
 	<a ng-click="deleteTask(task.ID)" class="pull-right"><i class="glyphicon glyphicon-trash"></i></a>
   </label>

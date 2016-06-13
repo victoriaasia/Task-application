@@ -9,7 +9,7 @@ $task = $_GET['task'];
 $status = "0";
 $created = date("Y-m-d H:i:s");
 // $type = $_GET['id_task'];
-$type = "3";
+$type = $_GET['group'];
 
 
 $query="INSERT INTO tasks(task,status,created_at,id_user, id_type)  VALUES ('$task', '$status', '$created', '{$user['id']}', '$type')";
