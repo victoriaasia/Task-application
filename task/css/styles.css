@@ -14,7 +14,7 @@ body {
   background-attachment: fixed;
   background-image:url(../img/back-img11.jpg);
   background-position: center;
-  padding-right: 0 !important;
+  padding: 25px 20px;
   /*overflow: hidden;*/
   /*background: #efefef;*/
 }
@@ -66,6 +66,7 @@ label.error {
   padding: 10px;
   text-align: justify;
   margin-bottom: 10px;
+  margin-right: 20px;
 }
 
 #welcome_index {
@@ -287,6 +288,7 @@ div.task label.checkbox:nth-child(even) {
 
 .task-content p:first-child {
   font-size: 21px;
+  word-break: break-all;
 }
 
 .task-content {
@@ -439,14 +441,15 @@ button {
 }
 
 .modal_content {
-  width: 44%;
+  width: 45%;
   /*margin: 0 auto;*/
   position: fixed;
-  left: 28%;
+  left: 29%;
   top: 30%;
 }
 
 .modal_content-text {
+  resize: none;
   border: 0 solid rgba(0,0,0,0.3);
   border-left-width: 1px;
   padding: 9px 9px 9px 29px;
@@ -498,4 +501,55 @@ input[type="radio"]:hover + label:before {
 }
 input[type="radio"]:checked + label:before {
   background: #d2322d;
+}
+
+.task-right-pane {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 8px;
+}
+
+p.task-content__type {
+  font-family: FontAwesome;
+  position: absolute;
+  font-size: 18px;
+  bottom: -9px
+}
+
+p[data-value='1']:after {
+  /*content: "\2665";
+  background-image: expression(this.runtimeStyle.backgroundImage="none",this.innerHTML = '<b>♥</b>'+this.innerHTML);*/
+  content: "\f19d";
+}
+
+p[data-value='2']:after {
+  content: "\f109";
+}
+
+p[data-value='3']:after {
+  content: "\f05b";
+}
+
+p[data-value='4']:after {
+  content: "\f118";
+}
+
+
+
+
+@media screen and (min-width: 1360px) {
+  .widget-header {
+    position: fixed;
+    z-index: 999;
+  }
+
+ .widget-header div {
+    padding: 0 23.5px;
+ }
+
+ .widget-body {
+     margin-top: 55px;
+ }
+
 }

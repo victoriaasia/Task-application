@@ -53,7 +53,8 @@ INSERT INTO `tasks` (`id`, `task`, `status`, `created_at`, `id_user`, `id_type`)
 INSERT INTO `type` (`id`, `value`) VALUES
 (1, 'учеба'),
 (2, 'работа'),
-(3, 'цели');
+(3, 'цели'),
+(4, 'другое');
 
 
 

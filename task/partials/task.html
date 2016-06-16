@@ -42,6 +42,11 @@
 		 <label for="3"><span>цели</span></label>
 	</div>
 
+	<div class="styled-checkbox">
+		 <input type="radio" name="group" class="other" id="4" value="4"/>
+		 <label for="4"><span>другое</span></label>
+	</div>
+
 
 	</div>
 
@@ -60,9 +65,12 @@
 	<div class="task-content">
 	<p ng-class="{strike:task.STATUS==1}">{{task.TASK}}</p>
 	<span class="task-content__date">добавлено: {{task.CREATED_AT}}</span>
-	<span class="task-content__type">type: {{task.ID_TYPE}}</span>
+	<!-- <span class="task-content__type" data-value="{{task.ID_TYPE}}"></span> -->
   </div>
+	<div class="task-right-pane">
 	<a ng-click="deleteTask(task.ID)" class="pull-right"><i class="glyphicon glyphicon-trash"></i></a>
+	<p class="task-content__type" data-value="{{task.ID_TYPE}}"></p>
+  </div>
   </label>
 </div>
 </div>

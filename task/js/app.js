@@ -30,26 +30,6 @@ app.controller('tasksController', function($scope, $http) {
         // $scope.taskInput = "";
       });
   };
-  //
-  // $(document).ready(function(){
-  // $("#submit").click(function(){
-  // var game=$('input[type="radio"]:checked').val();
-  // if($('input[type="radio"]:checked').length !== "0")
-  // {
-  // $.ajax({
-  // type: "POST",
-  // url: "addTask.php",
-  // data: "radio="+radio,
-  // success: function()
-  // {
-  // $("#msg").html("value Entered");
-  // }
-  // });
-  // }
-  // return false;
-  // });
-  // });
-
 
 
 
