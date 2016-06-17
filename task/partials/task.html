@@ -1,3 +1,4 @@
+
 <div class="widget-box col-lg-6 col-md-6 col-sm-8 col-xs-12 " id="recent-box" ng-controller="tasksController">
 
 <div class="widget-header">
@@ -57,19 +58,19 @@
 
 
 <div class="task">
-	<label class="checkbox" ng-repeat="task in tasks | filter : filterTask">
+	<label class="checkbox" ng-repeat="task in tasks | filter : filterTask" title="Нажми, чтобы изменить статус задачи">
     <input type="checkbox"
 	value="{{task.STATUS}}"
 	ng-checked="task.STATUS==1"
 	ng-click="toggleStatus(task.ID, task.STATUS, task.TASK)"/>
-	<div class="task-content">
-	<p ng-class="{strike:task.STATUS==1}">{{task.TASK}}</p>
-	<span class="task-content__date">добавлено: {{task.CREATED_AT}}</span>
+	<div class="task-content" ng-class="{strike:task.STATUS==1}">
+	<p>{{task.TASK}}</p>
+	<span class="task-content__date">запись изменена: {{task.CREATED_AT}}</span>
 	<!-- <span class="task-content__type" data-value="{{task.ID_TYPE}}"></span> -->
   </div>
 	<div class="task-right-pane">
-	<a ng-click="deleteTask(task.ID)" class="pull-right"><i class="glyphicon glyphicon-trash"></i></a>
 	<p class="task-content__type" data-value="{{task.ID_TYPE}}"></p>
+	<a ng-click="deleteTask(task.ID)" class="pull-right"><i class="glyphicon glyphicon-trash"></i></a>
   </div>
   </label>
 </div>
