@@ -24,7 +24,7 @@ body.noscroll{
   position: absolute;
   top: 50%;
   left: 50%;
-  height: 4px;
+  height: 5px;
   width: 380px;
   margin: -2px 0 0 -190px
 }

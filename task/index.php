@@ -97,12 +97,15 @@ if (empty($user)) {
 
 
 <div class="widget-filter col-lg-2 col-md-2 col-sm-3 col-xs-12">
-  <div class="widget-filter_item widget-filter_item-title">Мои задачи по категориям</div>
-  <div class="study-filter widget-filter_item">учеба</div>
-  <div class="work-filter widget-filter_item">работа</div>
-  <div class="aims-filter widget-filter_item">цели</div>
-  <div class="other-filter widget-filter_item">другое</div>
+  <div class="widget-filter_item-title">Мои задачи по категориям</div>
+  <div class="study-filter widget-filter_item" data-num="1">учеба</div>
+  <div class="work-filter widget-filter_item"  data-num="2">работа</div>
+  <div class="aims-filter widget-filter_item"  data-num="3">цели</div>
+  <div class="other-filter widget-filter_item" data-num="4">другое</div>
+  <div class="widget-filter_item"  data-num="5">все</div>
 </div>
+
+
 
 
 <?php include("includes/footer.php"); ?>

@@ -1,3 +1,8 @@
+// erase prev text in textarea
+function eraseText() {
+document.getElementById("comment").value = "";
+}
+
 // angular module for app
 var app = angular.module('myApp', []);
 
@@ -20,9 +25,14 @@ app.controller('tasksController', function($scope, $http) {
               break;
           }
       }
-
       var group = encodeURI(selectedRadio.value);
 
+
+	    var comment = document.getElementById('comment').value;
+	    if (comment == '') {
+	        alert ('Введите текст');
+        return false;
+	    }
 
 
     $http.post("ajax/addTask.php?task="+task+"&group="+group).success(function(data){

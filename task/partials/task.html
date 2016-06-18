@@ -10,7 +10,7 @@
 </h4>
 </div>
 <div class="widget-header__button">
-<button ng-click="addNewClicked=true;" class="btn btn-md btn-danger header-elements-margin" data-toggle="modal" data-target="#Modal"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить запись</button>
+<button ng-click="addNewClicked=true;" id="add-btn" class="btn btn-md btn-danger header-elements-margin" data-toggle="modal" data-target="#Modal"  onclick="javascript:eraseText();"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить запись</button>
 </div>
 <div class="widget-header__filter">
 <input type="text" ng-model="filterTask" class="form-control search header-elements-margin" placeholder="Фильтровать...">
@@ -23,7 +23,7 @@
 	<form ng-init="addNewClicked=false; " ng-if="addNewClicked" id="newTaskForm" class="add-task" method="post" action="">
 	<div class="form-actions modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal_content">
-	<textarea class="modal_content-text" rows="5" name="comment" id="comment" ng-model="taskInput" ng-focus="addNewClicked"></textarea>
+	<textarea class="modal_content-text" rows="5" name="comment" id="comment" ng-model="taskInput" ng-focus="addNewClicked" placeholder="Введите текст, выберите тип"></textarea>
 
 	<div class="modal_content-btn">
 	<button class="btn btn-md btn-danger add" id="submit" data-dismiss="modal" aria-hidden="true" type="submit" ng-click="addTask(taskInput)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить</button>
@@ -44,7 +44,7 @@
 	</div>
 
 	<div class="styled-checkbox">
-		 <input type="radio" name="group" class="other" id="4" value="4"/>
+		 <input type="radio" name="group" class="other" id="4" value="4" checked/>
 		 <label for="4"><span>другое</span></label>
 	</div>
 
@@ -57,8 +57,8 @@
 	</form>
 
 
-<div class="task">
-	<label class="checkbox" ng-repeat="task in tasks | filter : filterTask" title="Нажми, чтобы изменить статус задачи">
+<div class="task" name="task_box">
+	<label data-custom-type="{{task.ID_TYPE}}" name="task_item" class="checkbox" ng-repeat="task in tasks | filter : filterTask" title="Нажми, чтобы изменить статус задачи">
     <input type="checkbox"
 	value="{{task.STATUS}}"
 	ng-checked="task.STATUS==1"
@@ -66,7 +66,6 @@
 	<div class="task-content" ng-class="{strike:task.STATUS==1}">
 	<p>{{task.TASK}}</p>
 	<span class="task-content__date">запись изменена: {{task.CREATED_AT}}</span>
-	<!-- <span class="task-content__type" data-value="{{task.ID_TYPE}}"></span> -->
   </div>
 	<div class="task-right-pane">
 	<p class="task-content__type" data-value="{{task.ID_TYPE}}"></p>
