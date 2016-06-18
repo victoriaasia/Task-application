@@ -11,22 +11,27 @@ CREATE TABLE `users` (
   UNIQUE KEY `username` (`username`)
 );
 
+
+CREATE TABLE `type` (
+  `id` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `value` char(20) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
 CREATE TABLE `tasks` (
   `id` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
   `task` varchar(200) NOT NULL,
   `status` int(11) NOT NULL,
   `created_at` timestamp NOT NULL ON UPDATE current_timestamp,
   `id_user` TINYINT(3) UNSIGNED NOT NULL,
+  `id_type` TINYINT(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `FK1` (`id_user`),
-  FOREIGN KEY (`id_user`) REFERENCES `users`(`id`) ON DELETE CASCADE
+  FOREIGN KEY (`id_user`) REFERENCES `users`(`id`) ON DELETE CASCADE,
+  INDEX `FK2` (`id_type`),
+  FOREIGN KEY (`id_type`) REFERENCES `type`(`id`)
 );
 
-INSERT INTO `tasks` (`id`, `task`, `status`, `created_at`, `id_user`) VALUES
-(4, 'Привет', 0, NOW(), 1),
-(3, 'здесь ты можешь', 0, NOW(), 1),
-(2, 'записывать важные дела', 0, NOW(), 1),
-(1, 'которые предстоит совершить', 0, NOW(), 1);
 
 CREATE TABLE `connect` (
   `id_user` TINYINT(3) UNSIGNED,
@@ -36,6 +41,23 @@ CREATE TABLE `connect` (
   INDEX `FK1` (`id_user`),
   FOREIGN KEY (`id_user`) REFERENCES `users`(`id`) ON DELETE CASCADE
 );
+
+
+INSERT INTO `tasks` (`id`, `task`, `status`, `created_at`, `id_user`, `id_type`) VALUES
+(4, 'Привет', 0, NOW(), 1, 1),
+(3, 'здесь ты можешь', 0, NOW(), 1, 2),
+(2, 'записывать важные дела', 0, NOW(), 1, 1),
+(1, 'которые предстоит совершить', 0, NOW(), 1, 1);
+
+
+INSERT INTO `type` (`id`, `value`) VALUES
+(1, 'учеба'),
+(2, 'работа'),
+(3, 'цели'),
+(4, 'другое');
+
+
+
 
 -- CREATE TABLE `type` (
 --   `id` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,

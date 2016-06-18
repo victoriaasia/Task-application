@@ -1,3 +1,4 @@
+
 <div class="widget-box col-lg-6 col-md-6 col-sm-8 col-xs-12 " id="recent-box" ng-controller="tasksController">
 
 <div class="widget-header">
@@ -9,7 +10,7 @@
 </h4>
 </div>
 <div class="widget-header__button">
-<button ng-click="addNewClicked=true;" class="btn btn-md btn-danger header-elements-margin" data-toggle="modal" data-target="#Modal"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить запись</button>
+<button ng-click="addNewClicked=true;" id="add-btn" class="btn btn-md btn-danger header-elements-margin" data-toggle="modal" data-target="#Modal"  onclick="javascript:eraseText();"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить запись</button>
 </div>
 <div class="widget-header__filter">
 <input type="text" ng-model="filterTask" class="form-control search header-elements-margin" placeholder="Фильтровать...">
@@ -19,27 +20,32 @@
 <div class="widget-body">
 
 
-	<form ng-init="addNewClicked=false; " ng-if="addNewClicked" id="newTaskForm" class="add-task">
+	<form ng-init="addNewClicked=false; " ng-if="addNewClicked" id="newTaskForm" class="add-task" method="post" action="">
 	<div class="form-actions modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal_content">
-	<textarea class="modal_content-text" rows="5" name="comment" id="comment" ng-model="taskInput" ng-focus="addNewClicked"></textarea>
+	<textarea class="modal_content-text" rows="5" name="comment" id="comment" ng-model="taskInput" ng-focus="addNewClicked" placeholder="Введите текст, выберите тип"></textarea>
 
 	<div class="modal_content-btn">
-	<button class="btn btn-md btn-danger add" data-dismiss="modal" aria-hidden="true" type="submit" ng-click="addTask(taskInput)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить</button>
+	<button class="btn btn-md btn-danger add" id="submit" data-dismiss="modal" aria-hidden="true" type="submit" ng-click="addTask(taskInput)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить</button>
 
 	<div class="styled-checkbox">
- 		 <input type="radio" name="type" class="study" id="study"/>
- 		 <label for="study"><span>учеба</span></label>
+ 		 <input type="radio" name="group" class="study" id="1" value="1"/>
+ 		 <label for="1"><span>учеба</span></label>
   </div>
 
 	<div class="styled-checkbox">
- 		 <input type="radio" name="type" class="work" id="work"/>
- 		 <label for="work"><span>работа</span></label>
+ 		 <input type="radio" name="group" class="work" id="2" value="2"/>
+ 		 <label for="2"><span>работа</span></label>
   </div>
 
 	<div class="styled-checkbox">
-		 <input type="radio" name="type" class="aims" id="aims"/>
-		 <label for="aims"><span>цели</span></label>
+		 <input type="radio" name="group" class="aims" id="3" value="3"/>
+		 <label for="3"><span>цели</span></label>
+	</div>
+
+	<div class="styled-checkbox">
+		 <input type="radio" name="group" class="other" id="4" value="4" checked/>
+		 <label for="4"><span>другое</span></label>
 	</div>
 
 
@@ -51,19 +57,21 @@
 	</form>
 
 
-<div class="task">
-	<label class="checkbox" ng-repeat="task in tasks | filter : filterTask">
+<div class="task" name="task_box">
+	<label data-custom-type="{{task.ID_TYPE}}" name="task_item" class="checkbox" ng-repeat="task in tasks | filter : filterTask" title="Нажми, чтобы изменить статус задачи">
     <input type="checkbox"
 	value="{{task.STATUS}}"
 	ng-checked="task.STATUS==1"
 	ng-click="toggleStatus(task.ID, task.STATUS, task.TASK)"/>
-	<div class="task-content">
-	<p ng-class="{strike:task.STATUS==1}">{{task.TASK}}</p>
-	<p class="task-content__date">добавлено: {{task.CREATED_AT}}</p>
-	<p class="task-content__type">{{task.TYPE}}</p>
+	<div class="task-content" ng-class="{strike:task.STATUS==1}">
+	<p>{{task.TASK}}</p>
+	<span class="task-content__date">запись изменена: {{task.CREATED_AT}}</span>
   </div>
+	<div class="task-right-pane">
+	<p class="task-content__type" data-value="{{task.ID_TYPE}}"></p>
 	<a ng-click="deleteTask(task.ID)" class="pull-right"><i class="glyphicon glyphicon-trash"></i></a>
-    </label>
+  </div>
+  </label>
 </div>
 </div>
 

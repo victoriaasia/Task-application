@@ -14,7 +14,7 @@ if (empty($user)) {
 
   <div class='widget-box-in col-xs-12 col-sm-8 col-md-5 col-lg-5' id='recent-box' ng-controller='tasksController'>
 
-  <div class='widget-body'>
+  <div class='widget-body-in'>
   <div class='task'>
   	<label class='checkbox'>
       <input type='checkbox' value='0'/>
@@ -22,7 +22,7 @@ if (empty($user)) {
   	<p>Привет</p>
   	<p class='task-content__date'>добавлено: 2016-06-05</p>
     </div>
-  	<a class='pull-right'><i class='glyphicon glyphicon-trash'></i></a>
+  	<a class=''><i class='glyphicon glyphicon-trash'></i></a>
       </label>
   </div>
 
@@ -33,7 +33,7 @@ if (empty($user)) {
     <p>здесь ты можешь</p>
     <p class='task-content__date'>добавлено: 2016-06-05</p>
     </div>
-    <a class='pull-right'><i class='glyphicon glyphicon-trash'></i></a>
+    <a class=''><i class='glyphicon glyphicon-trash'></i></a>
       </label>
   </div>
 
@@ -44,7 +44,7 @@ if (empty($user)) {
     <p>записывать важные дела</p>
     <p class='task-content__date'>добавлено: 2016-06-05</p>
     </div>
-    <a class='pull-right'><i class='glyphicon glyphicon-trash'></i></a>
+    <a class=''><i class='glyphicon glyphicon-trash'></i></a>
       </label>
   </div>
 
@@ -55,7 +55,7 @@ if (empty($user)) {
     <p>которые предстоит совершить</p>
     <p class='task-content__date'>добавлено: 2016-06-05</p>
     </div>
-    <a class='pull-right'><i class='glyphicon glyphicon-trash'></i></a>
+    <a class=''><i class='glyphicon glyphicon-trash'></i></a>
       </label>
   </div>
 
@@ -94,6 +94,18 @@ if (empty($user)) {
 				<div ng-include src="'partials/task.html'"></div>
 		</div>
 </div>
+
+
+<div class="widget-filter col-lg-2 col-md-2 col-sm-3 col-xs-12">
+  <div class="widget-filter_item-title">Мои задачи по категориям</div>
+  <div class="study-filter widget-filter_item" data-num="1">учеба</div>
+  <div class="work-filter widget-filter_item"  data-num="2">работа</div>
+  <div class="aims-filter widget-filter_item"  data-num="3">цели</div>
+  <div class="other-filter widget-filter_item" data-num="4">другое</div>
+  <div class="widget-filter_item"  data-num="5">все</div>
+</div>
+
+
 
 
 <?php include("includes/footer.php"); ?>

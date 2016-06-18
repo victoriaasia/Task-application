@@ -1,6 +1,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 <link href='https://fonts.googleapis.com/css?family=Jura:400,500,600,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 <style>
@@ -23,7 +24,7 @@ body.noscroll{
   position: absolute;
   top: 50%;
   left: 50%;
-  height: 4px;
+  height: 5px;
   width: 380px;
   margin: -2px 0 0 -190px
 }
