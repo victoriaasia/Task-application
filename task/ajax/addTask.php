@@ -13,10 +13,12 @@ $type = $_GET['group'];
 
 
 $query="INSERT INTO tasks(task,status,created_at,id_user, id_type)  VALUES ('$task', '$status', '$created', '{$user['id']}', '$type')";
+//quick query. get result = command to query the database or die
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
-
+// get num of rows
 $result = $mysqli->affected_rows;
 
+// get json data value
 echo $json_response = json_encode($result);
 }
 ?>

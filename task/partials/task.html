@@ -10,7 +10,7 @@
 </h4>
 </div>
 <div class="widget-header__button">
-<button ng-click="addNewClicked=true;" id="add-btn" class="btn btn-md btn-danger header-elements-margin" data-toggle="modal" data-target="#Modal"  onclick="javascript:eraseText();"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить запись</button>
+<button ng-click="addNewClicked=true;" id="add-btn" class="btn btn-md btn-danger header-elements-margin" data-toggle="modal" data-target="#Modal" onclick="javascript:eraseText();"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить запись</button>
 </div>
 <div class="widget-header__filter">
 <input type="text" ng-model="filterTask" class="form-control search header-elements-margin" placeholder="Фильтровать...">
@@ -20,7 +20,7 @@
 <div class="widget-body">
 
 
-	<form ng-init="addNewClicked=false; " ng-if="addNewClicked" id="newTaskForm" class="add-task" method="post" action="">
+	<form ng-init="addNewClicked=false;" ng-if="addNewClicked" id="newTaskForm" class="add-task" method="post" action="">
 	<div class="form-actions modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal_content">
 	<textarea class="modal_content-text" rows="5" name="comment" id="comment" ng-model="taskInput" ng-focus="addNewClicked" placeholder="Введите текст, выберите тип"></textarea>
@@ -56,13 +56,13 @@
 	</div>
 	</form>
 
-
 <div class="task" name="task_box">
-	<label data-custom-type="{{task.ID_TYPE}}" name="task_item" class="checkbox" ng-repeat="task in tasks | filter : filterTask" title="Нажми, чтобы изменить статус задачи">
+	<label data-custom-type="{{task.ID_TYPE}}" name="task_item" class="checkbox" ng-repeat="task in tasks | filter : filterTask">
     <input type="checkbox"
 	value="{{task.STATUS}}"
 	ng-checked="task.STATUS==1"
 	ng-click="toggleStatus(task.ID, task.STATUS, task.TASK)"/>
+	<a ng-click="editTask(task.ID)" class="edit-task-btn"><i class="glyphicon glyphicon-pencil"></i></a>
 	<div class="task-content" ng-class="{strike:task.STATUS==1}">
 	<p>{{task.TASK}}</p>
 	<span class="task-content__date">запись изменена: {{task.CREATED_AT}}</span>

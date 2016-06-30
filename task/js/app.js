@@ -41,8 +41,6 @@ app.controller('tasksController', function($scope, $http) {
       });
   };
 
-
-
   $scope.deleteTask = function (task) {
     if(confirm("Удалить запись?")) {
     $http.post("ajax/deleteTask.php?taskID="+task).success(function(data) {
@@ -63,7 +61,15 @@ app.controller('tasksController', function($scope, $http) {
       });
   };
 
+  // $scope.editTask = function (task) {
+  //       $http.post("ajax/editTask.php?taskID="+task).success(function(data) {
+  //       getTask();
+  //     });
+  // };
+
 });
+
+
 
 // random background image
 app.factory("bgImage", function($http) {

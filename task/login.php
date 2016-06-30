@@ -11,11 +11,11 @@
 
 <form name="loginform" id="loginform" action="" method="post">
   <div class="styled-input wide">
-      <input type="text" name="username" id="username" class="input" value="" size="20" required />
+      <input type="text" name="username" id="username" class="input" value="" size="20" readonly onfocus="this.removeAttribute('readonly')" required />
       <label for="username">Логин</label>
   </div>
   <div class="styled-input wide">
-      <input type="password" name="password" id="password" class="input" value="" size="20" required />
+      <input type="password" name="password" id="password" class="input" value="" size="20" readonly onfocus="this.removeAttribute('readonly')" required />
       <label for="password">Пароль</label>
   </div>
 

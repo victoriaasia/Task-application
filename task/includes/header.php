@@ -2,8 +2,11 @@
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
-<link rel="stylesheet" type="text/css" href="css/styles.css"/>
 <link href='https://fonts.googleapis.com/css?family=Jura:400,500,600,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="tooltipster/dist/css/tooltipster.bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css" />
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+
 <style>
 body.noscroll{
   min-height:100%;
@@ -32,7 +35,7 @@ body.noscroll{
 .loader>div{
   animation-duration: 5s;
   animation-name: loader_width;
-  background-image: linear-gradient(to right,#ff2d55,#FA8500,#E5FA00,#4cd964,#5ac8fa,#4300FA,#C800FA);
+  background-image: linear-gradient(to right,#fff,#95a5a6,#d2322d);
   background-size: 380px 4px;
   height: 100%;
   position: relative
